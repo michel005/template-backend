@@ -1,0 +1,36 @@
+{
+  "user": [
+    {
+      "full_name": "Michel Douglas Grigoli",
+      "email": "mdgrigoli@hotmail.com.br",
+      "birthday": "19/12/1991",
+      "password": "thmpv005",
+      "id": "926c062d-dc69-4e66-9d64-525b0d162f08",
+      "save_date": "2024-10-19T01:00:48.330Z"
+    }
+  ],
+  "user_token": [
+    {
+      "user_id": "926c062d-dc69-4e66-9d64-525b0d162f08",
+      "expiration_date": "2024-10-15T01:02:12.047Z",
+      "token": "397d8fd9-cf67-4df5-94aa-7f5dc438aab4",
+      "id": "024594b1-107d-4784-8df2-1392dd389c2b",
+      "save_date": "2024-10-15T01:02:12.047Z"
+    },
+    {
+      "user_id": "926c062d-dc69-4e66-9d64-525b0d162f08",
+      "expiration_date": "2024-10-19T01:00:30.337Z",
+      "token": "44df3e10-dae0-4c3e-8789-b1a687968722",
+      "id": "105fb131-7f30-48b3-9e8d-2a60ff27980f",
+      "save_date": "2024-10-19T01:00:30.337Z"
+    },
+    {
+      "user_id": "926c062d-dc69-4e66-9d64-525b0d162f08",
+      "expiration_date": "2024-10-19T01:00:41.468Z",
+      "token": "05bb6ab7-16d1-41fd-bf7a-32646473d334",
+      "id": "44962685-f071-4c35-b233-b5914f1d18fa",
+      "save_date": "2024-10-19T01:00:41.468Z"
+    }
+  ],
+  "user_recovery": []
+}

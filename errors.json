@@ -1,0 +1,17 @@
+{
+  "TOKEN-001": "Token não é válido!",
+  "USER-001": "Nome completo não informado!",
+  "USER-002": "E-mail não informado!",
+  "USER-003": "Anivesário não informado!",
+  "USER-004": "Senha de acesso não informada!",
+  "USER-005": "E-mail não esta disponível!",
+  "USER-006": "Usuário não encontrado!",
+  "USER-007": "Senha incorreta!",
+  "USER-008": "E-mail e/ou senha incorreta!",
+  "USER-009": "Senha atual incorreta!",
+  "USER-010": "Senha nova e a confirmação não são iguais!",
+  "USER-011": "E-mail informado para recuperação é inválido!",
+  "USER-012": "Código de recuperação não informado ou inválido!",
+  "USER-013": "Senha e confirmação não são iguais!",
+  "USER-014": "Já existe uma recuperação de senha pendente!"
+}
