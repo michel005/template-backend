@@ -30,6 +30,69 @@
       "token": "05bb6ab7-16d1-41fd-bf7a-32646473d334",
       "id": "44962685-f071-4c35-b233-b5914f1d18fa",
       "save_date": "2024-10-19T01:00:41.468Z"
+    },
+    {
+      "user_id": "926c062d-dc69-4e66-9d64-525b0d162f08",
+      "expiration_date": "2024-10-27T05:56:52.711Z",
+      "token": "b8683f14-a652-463e-a17c-51651412ad9f",
+      "id": "803395d7-ae7a-4ee6-84a3-2b0bd4d98675",
+      "save_date": "2024-10-27T05:56:52.711Z"
+    },
+    {
+      "user_id": "926c062d-dc69-4e66-9d64-525b0d162f08",
+      "expiration_date": "2024-10-27T06:02:16.978Z",
+      "token": "93e07a1a-55c5-45ba-bd16-5c4d6765c50b",
+      "id": "785d6dfc-d4d8-4c8f-883b-feb07103424c",
+      "save_date": "2024-10-27T06:02:16.978Z"
+    },
+    {
+      "user_id": "926c062d-dc69-4e66-9d64-525b0d162f08",
+      "expiration_date": "2024-10-27T06:07:45.910Z",
+      "token": "c79d4138-7e89-446e-a98d-f2440f0900d8",
+      "id": "305e8a2e-b81e-45f8-af94-129dc300b3d0",
+      "save_date": "2024-10-27T06:07:45.910Z"
+    },
+    {
+      "user_id": "926c062d-dc69-4e66-9d64-525b0d162f08",
+      "expiration_date": "2024-10-27T06:10:11.359Z",
+      "token": "1b118ddc-9c39-4eeb-b083-7623545cb7b1",
+      "id": "b49d4633-7f79-4fef-be16-756a2fbf84bf",
+      "save_date": "2024-10-27T06:10:11.359Z"
+    },
+    {
+      "user_id": "926c062d-dc69-4e66-9d64-525b0d162f08",
+      "expiration_date": "2024-10-27T06:11:27.149Z",
+      "token": "7b948ae9-bb85-4e02-81dc-26d112190ba2",
+      "id": "43640cce-d7c0-4f7a-afb5-ec9377635dfb",
+      "save_date": "2024-10-27T06:11:27.149Z"
+    },
+    {
+      "user_id": "926c062d-dc69-4e66-9d64-525b0d162f08",
+      "expiration_date": "2024-10-27T06:12:00.249Z",
+      "token": "df4411b4-dad7-430d-b113-dd6ccbdfe988",
+      "id": "df63a9be-a1c8-439e-b575-64d9e0f2a44b",
+      "save_date": "2024-10-27T06:12:00.249Z"
+    },
+    {
+      "user_id": "926c062d-dc69-4e66-9d64-525b0d162f08",
+      "expiration_date": "2024-10-28T01:45:46.246Z",
+      "token": "98feb73f-5c6a-4e76-acee-aa792cd5929d",
+      "id": "2f575a72-3b03-4bca-92aa-fc0fd21e356a",
+      "save_date": "2024-10-28T01:45:46.246Z"
+    },
+    {
+      "user_id": "926c062d-dc69-4e66-9d64-525b0d162f08",
+      "expiration_date": "2024-10-28T02:06:20.905Z",
+      "token": "118bdcb6-4b3e-4517-b448-474dcc4d4c6a",
+      "id": "b32fad35-e06f-47e5-9f8b-d36e0f08fb29",
+      "save_date": "2024-10-28T02:06:20.905Z"
+    },
+    {
+      "user_id": "926c062d-dc69-4e66-9d64-525b0d162f08",
+      "expiration_date": "2024-10-31T22:18:13.247Z",
+      "token": "10479d10-31ef-471d-84bc-d21e191deee9",
+      "id": "f55b7a34-1d87-47a6-9aaf-9b97eed9d03f",
+      "save_date": "2024-10-31T22:18:13.247Z"
     }
   ],
   "user_recovery": []

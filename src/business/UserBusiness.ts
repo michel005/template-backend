@@ -34,6 +34,9 @@ export class UserBusiness {
         if (!entity.password) {
             errors.add('password', 'USER-004')
         }
+        if (!entity.personType) {
+            errors.add('personType', 'USER-005')
+        }
 
         errors.throw()
     }
@@ -58,6 +61,7 @@ export class UserBusiness {
             ErrorCollection.simple('email', 'USER-005')
         }
         this.database.save({
+            picture: user.picture,
             full_name: user.full_name,
             email: user.email,
             birthday: user.birthday,
@@ -81,6 +85,7 @@ export class UserBusiness {
         }
         return this.database.save({
             ...currentUser,
+            picture: user.picture,
             full_name: user.full_name,
             birthday: user.birthday,
         })
@@ -130,6 +135,4 @@ export class UserBusiness {
         UserTokenBusiness.removeByUserId({ userId: currentUser?.id })
         return this.database.remove(currentUser?.id)
     }
-
-    static recoverySend = ({ email }: { email?: string }) => {}
 }
