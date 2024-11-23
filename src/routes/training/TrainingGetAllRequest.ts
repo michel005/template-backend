@@ -1,13 +1,16 @@
 import { RequestHandler } from 'express-serve-static-core'
-import { UserType } from '../../types/UserType'
 import { DefaultRouterResolver } from '../DefaultRouterResolver'
 import { Business } from '../../business/Business'
 
-export const UserCreateRequest: RequestHandler<string, UserType> = (
+export const TrainingGetAllRequest: RequestHandler<string, any, any, any> = (
     req,
     res
 ) => {
     DefaultRouterResolver(res, () => {
-        Business.user.create({ user: req.body })
+        if (req.currentUser) {
+            return Business.training.getAll({
+                currentUser: req.currentUser,
+            })
+        }
     })
 }

@@ -1,9 +1,8 @@
 import { NextFunction, Request, Response } from 'express'
 import { SessionUtils } from '../utils/SessionUtils'
-import { UserTokenBusiness } from '../business/UserTokenBusiness'
 import { ErrorCollection } from '../types/ErrorCollection'
-import { UserBusiness } from '../business/UserBusiness'
 import { DefaultRouterResolver } from '../routes/DefaultRouterResolver'
+import { Business } from '../business/Business'
 
 const publicRoutes = [
     ['GET', '/api/ping'],
@@ -32,9 +31,9 @@ export const AuthenticationMiddleware = (
                 const token = SessionUtils.tokenByRequest(req)
 
                 if (token) {
-                    const userId = UserTokenBusiness.validateToken({ token })
+                    const userId = Business.userToken.validateToken({ token })
                     if (userId) {
-                        req.currentUser = UserBusiness.database.find(
+                        req.currentUser = Business.user.database.find(
                             (x) => x.id == userId
                         )[0]
 

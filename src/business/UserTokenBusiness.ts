@@ -6,11 +6,11 @@ import { ErrorCollection } from '../types/ErrorCollection'
 import { UserBusiness } from './UserBusiness'
 
 export class UserTokenBusiness {
-    static database: Database<UserTokenType> = new Database<UserTokenType>(
+    public database: Database<UserTokenType> = new Database<UserTokenType>(
         'user_token'
     )
 
-    static removeByUserId = ({ userId }: { userId?: string }) => {
+    public removeByUserId = ({ userId }: { userId?: string }) => {
         this.database
             .find((x) => x.user_id === userId)
             .forEach((x) => {
@@ -18,7 +18,7 @@ export class UserTokenBusiness {
             })
     }
 
-    static createToken = ({ user_id }: { user_id?: string }) => {
+    public createToken = ({ user_id }: { user_id?: string }) => {
         const newToken = randomUUID()
 
         this.database.save({
@@ -30,7 +30,7 @@ export class UserTokenBusiness {
         return newToken
     }
 
-    static validateToken = ({ token }: { token?: string }) => {
+    public validateToken = ({ token }: { token?: string }) => {
         const funded = this.database.find((x) => x.token === token)
         if (funded.length > 0) {
             return funded[0].user_id

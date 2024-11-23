@@ -4,58 +4,78 @@ import { UserTokenBusiness } from './UserTokenBusiness'
 import { LoginType } from '../types/LoginType'
 import { ErrorCollection } from '../types/ErrorCollection'
 import { UserRecoveryBusiness } from './UserRecoveryBusiness'
+import { Business } from './Business'
 
 export class UserBusiness {
-    static database: Database<UserType> = new Database<UserType>('user')
+    public database: Database<UserType> = new Database<UserType>('user')
 
-    static login = ({ email, password }: LoginType) => {
+    public login = ({ email, password }: LoginType) => {
         const users = this.database.find(
             (x) => x.email === email && x.password === password
         )
         if (users.length > 0) {
-            return UserTokenBusiness.createToken({ user_id: users[0].id })
+            return Business.userToken.createToken({ user_id: users[0].id })
         } else {
             ErrorCollection.simple('error', 'USER-008')
         }
     }
 
-    private static validate = ({ entity }: { entity: any }) => {
-        const errors = new ErrorCollection()
-
+    private validate = ({
+        errors,
+        entity,
+    }: {
+        errors: ErrorCollection
+        entity: any
+    }) => {
         if (!entity.full_name) {
-            errors.add('full_name', 'USER-001')
-        }
-        if (!entity.email) {
-            errors.add('email', 'USER-002')
+            errors.add('full_name', 'VALIDATION-001')
         }
         if (!entity.birthday) {
-            errors.add('birthday', 'USER-003')
+            errors.add('birthday', 'VALIDATION-001')
         }
+        if (!entity.person_type) {
+            errors.add('person_type', 'VALIDATION-001')
+        }
+        if (!entity.document_type) {
+            errors.add('document_type', 'VALIDATION-001')
+        }
+        if (!entity.document_number) {
+            errors.add('document_number', 'VALIDATION-001')
+        }
+        if (entity.address) {
+            if (!entity.address.city) {
+                errors.add('address.city', 'VALIDATION-001')
+            }
+            if (!entity.address.state) {
+                errors.add('address.state', 'VALIDATION-001')
+            }
+            if (!entity.address.country) {
+                errors.add('address.country', 'VALIDATION-001')
+            }
+        }
+    }
+
+    private validateCreate = ({ entity }: { entity: any }) => {
+        const errors = new ErrorCollection()
+
         if (!entity.password) {
-            errors.add('password', 'USER-004')
+            errors.add('password', 'VALIDATION-001')
         }
-        if (!entity.personType) {
-            errors.add('personType', 'USER-005')
-        }
+        this.validate({ errors, entity })
 
         errors.throw()
     }
 
-    private static validateUpdate = ({ entity }: { entity: any }) => {
+    private validateUpdate = ({ entity }: { entity: any }) => {
         const errors = new ErrorCollection()
 
-        if (!entity.full_name) {
-            errors.add('full_name', 'USER-001')
-        }
-        if (!entity.birthday) {
-            errors.add('birthday', 'USER-003')
-        }
+        this.validate({ errors, entity })
 
         errors.throw()
     }
 
-    static create = ({ user }: { user: Omit<UserType, 'id'> }) => {
-        this.validate({ entity: user })
+    public create = ({ user }: { user: Omit<UserType, 'id'> }) => {
+        this.validateCreate({ entity: user })
         const sameEmail = this.database.find((x) => x.email === user.email)
         if (sameEmail.length > 0) {
             ErrorCollection.simple('email', 'USER-005')
@@ -66,10 +86,23 @@ export class UserBusiness {
             email: user.email,
             birthday: user.birthday,
             password: user.password,
+            address: {
+                zip_code: user.address?.zip_code,
+                street_name: user.address?.street_name,
+                street_number: user.address?.street_number,
+                complement: user.address?.complement,
+                neighborhood: user.address?.neighborhood,
+                city: user.address?.city,
+                state: user.address?.state,
+                country: user.address?.country,
+            },
+            settings: {
+                color_schema: user.settings?.color_schema,
+            },
         })
     }
 
-    static update = ({
+    public update = ({
         currentUser,
         user,
     }: {
@@ -77,51 +110,66 @@ export class UserBusiness {
         user: Omit<UserType, 'id'>
     }) => {
         this.validateUpdate({ entity: user })
-        const sameEmail = this.database.find(
-            (x) => x.email === user.email && x.id !== currentUser?.id
-        )
-        if (sameEmail.length > 0) {
-            ErrorCollection.simple('email', 'USER-005')
-        }
         return this.database.save({
             ...currentUser,
             picture: user.picture,
             full_name: user.full_name,
             birthday: user.birthday,
+            person_type: user.person_type,
+            document_type: user.document_type,
+            document_number: user.document_number,
+            biography: user.biography,
+            phone: user.phone,
+            address: {
+                zip_code: user.address?.zip_code,
+                street_name: user.address?.street_name,
+                street_number: user.address?.street_number,
+                complement: user.address?.complement,
+                neighborhood: user.address?.neighborhood,
+                city: user.address?.city,
+                state: user.address?.state,
+                country: user.address?.country,
+            },
+            settings: {
+                color_schema: user.settings?.color_schema,
+            },
         })
     }
 
-    static updatePassword = ({
+    public updatePassword = ({
         currentUser,
         current,
-        newPassword,
+        new_password,
         confirmation,
     }: {
         currentUser?: UserType
         current?: string
-        newPassword?: string
+        new_password?: string
         confirmation?: string
     }) => {
+        if (!currentUser) {
+            return
+        }
         const errors = new ErrorCollection()
 
         if (currentUser?.password !== current) {
             errors.add('current', 'USER-009')
         }
 
-        if (newPassword !== confirmation) {
-            errors.add('newPassword', 'USER-010')
+        if (new_password !== confirmation) {
+            errors.add('new_password', 'USER-010')
         }
 
         errors.throw()
 
-        UserTokenBusiness.removeByUserId({ userId: currentUser?.id })
+        Business.userToken.removeByUserId({ userId: currentUser?.id })
         this.database.save({
             ...currentUser,
-            password: newPassword,
+            password: new_password,
         })
     }
 
-    static remove = ({
+    public remove = ({
         currentUser,
         password,
     }: {
@@ -131,8 +179,8 @@ export class UserBusiness {
         if (currentUser?.password !== password) {
             ErrorCollection.simple('password', 'USER-007')
         }
-        UserRecoveryBusiness.removeByUserId({ userId: currentUser?.id })
-        UserTokenBusiness.removeByUserId({ userId: currentUser?.id })
+        Business.userRecovery.removeByUserId({ userId: currentUser?.id })
+        Business.userToken.removeByUserId({ userId: currentUser?.id })
         return this.database.remove(currentUser?.id)
     }
 }

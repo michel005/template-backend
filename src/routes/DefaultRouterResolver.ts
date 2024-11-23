@@ -12,7 +12,6 @@ export const DefaultRouterResolver = (
             res.status(200).send(callback())
         }
     } catch (e: any) {
-        console.error(e)
         res.status(422).send(e)
     }
 }

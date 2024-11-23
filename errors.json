@@ -1,9 +1,7 @@
 {
     "TOKEN-001": "Token não é válido!",
-    "USER-001": "Nome completo não informado!",
-    "USER-002": "E-mail não informado!",
-    "USER-003": "Anivesário não informado!",
-    "USER-004": "Senha de acesso não informada!",
+    "VALIDATION-001": "Campo não informado!",
+    "VALIDATION-002": "Registro não encontrado!",
     "USER-005": "E-mail não esta disponível!",
     "USER-006": "Usuário não encontrado!",
     "USER-007": "Senha incorreta!",
@@ -14,5 +12,5 @@
     "USER-012": "Código de recuperação não informado ou inválido!",
     "USER-013": "Senha e confirmação não são iguais!",
     "USER-014": "Já existe uma recuperação de senha pendente!",
-    "USER-015": "Tipo de pessoa não informado"
+    "TRAINING-001": "Treino inválido!"
 }

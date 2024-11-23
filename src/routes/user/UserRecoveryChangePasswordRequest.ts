@@ -1,8 +1,6 @@
 import { RequestHandler } from 'express-serve-static-core'
-import { UserBusiness } from '../../business/UserBusiness'
 import { DefaultRouterResolver } from '../DefaultRouterResolver'
-import { UserTokenBusiness } from '../../business/UserTokenBusiness'
-import { UserRecoveryBusiness } from '../../business/UserRecoveryBusiness'
+import { Business } from '../../business/Business'
 
 export const UserRecoveryChangePasswordRequest: RequestHandler<
     string,
@@ -16,6 +14,6 @@ export const UserRecoveryChangePasswordRequest: RequestHandler<
     }
 > = (req, res) => {
     DefaultRouterResolver(res, () => {
-        UserRecoveryBusiness.changePassword(req.query)
+        Business.userRecovery.changePassword(req.query)
     })
 }

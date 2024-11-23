@@ -3,6 +3,7 @@ import DatabaseConfig from '../../database.json'
 import fileStream from 'fs'
 import path from 'path'
 import { DatabaseEntity } from '../types/database/DatabaseEntity'
+import { ErrorCollection } from '../types/ErrorCollection'
 
 export class Database<T> {
     private readonly _table: string
@@ -61,6 +62,8 @@ export class Database<T> {
                     id: entity.id,
                     save_date: new Date(),
                 }
+            } else {
+                ErrorCollection.simple('error', 'VALIDATION-002')
             }
         } else {
             entity.id = randomUUID()

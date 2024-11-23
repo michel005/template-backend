@@ -4,14 +4,15 @@ import { MailUtils } from '../utils/MailUtils'
 import ProjectInfo from '../../project.json'
 import { UserBusiness } from './UserBusiness'
 import { ErrorCollection } from '../types/ErrorCollection'
+import { Business } from './Business'
 
 export class UserRecoveryBusiness {
-    static database = new Database<UserRecoveryType>('user_recovery')
+    private database = new Database<UserRecoveryType>('user_recovery')
 
-    static send = ({ email }: { email?: string }) => {
+    public send = ({ email }: { email?: string }) => {
         const recoveryCode = String(Math.floor(Math.random() * 1000000))
 
-        const emailUser = UserBusiness.database.find(
+        const emailUser = Business.user.database.find(
             (x) => x.email === email
         )?.[0]
 
@@ -43,12 +44,12 @@ export class UserRecoveryBusiness {
         })
     }
 
-    static code = ({ email, code }: { email?: string; code?: string }) => {
+    public code = ({ email, code }: { email?: string; code?: string }) => {
         if (!code) {
             ErrorCollection.simple('code', 'USER-012')
         }
 
-        const emailUser = UserBusiness.database.find(
+        const emailUser = Business.user.database.find(
             (x) => x.email === email
         )?.[0]
 
@@ -74,7 +75,7 @@ export class UserRecoveryBusiness {
         }
     }
 
-    static changePassword = ({
+    public changePassword = ({
         email,
         code,
         password,
@@ -89,7 +90,7 @@ export class UserRecoveryBusiness {
             ErrorCollection.simple('code', 'USER-012')
         }
 
-        const emailUser = UserBusiness.database.find(
+        const emailUser = Business.user.database.find(
             (x) => x.email === email
         )?.[0]
 
@@ -114,18 +115,18 @@ export class UserRecoveryBusiness {
                 status: 'DONE',
             })
 
-            UserBusiness.updatePassword({
+            Business.user.updatePassword({
                 currentUser: emailUser,
                 current: emailUser?.password,
-                newPassword: password,
+                new_password: password,
                 confirmation,
             })
         } else {
             ErrorCollection.simple('code', 'USER-012')
         }
     }
-    
-    static removeByUserId = ({ userId }: { userId?: string }) => {
+
+    public removeByUserId = ({ userId }: { userId?: string }) => {
         this.database
             .find((x) => x.user_id === userId)
             .forEach((x) => {

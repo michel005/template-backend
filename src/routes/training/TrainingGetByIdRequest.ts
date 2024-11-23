@@ -1,17 +1,19 @@
 import { RequestHandler } from 'express-serve-static-core'
 import { DefaultRouterResolver } from '../DefaultRouterResolver'
-import { UserRecoveryBusiness } from '../../business/UserRecoveryBusiness'
 import { Business } from '../../business/Business'
 
-export const UserRecoverySendRequest: RequestHandler<
+export const TrainingGetByIdRequest: RequestHandler<
     string,
     any,
     any,
-    {
-        email?: string
-    }
+    { id: string }
 > = (req, res) => {
     DefaultRouterResolver(res, () => {
-        Business.userRecovery.send({ email: req.query.email })
+        if (req.currentUser) {
+            return Business.training.getById({
+                id: req.query.id,
+                currentUser: req.currentUser,
+            })
+        }
     })
 }

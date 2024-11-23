@@ -1,8 +1,7 @@
 import { RequestHandler } from 'express-serve-static-core'
-import { UserBusiness } from '../../business/UserBusiness'
 import { DefaultRouterResolver } from '../DefaultRouterResolver'
-import { UserTokenBusiness } from '../../business/UserTokenBusiness'
 import { UserRecoveryBusiness } from '../../business/UserRecoveryBusiness'
+import { Business } from '../../business/Business'
 
 export const UserRecoveryCodeRequest: RequestHandler<
     string,
@@ -14,7 +13,7 @@ export const UserRecoveryCodeRequest: RequestHandler<
     }
 > = (req, res) => {
     DefaultRouterResolver(res, () => {
-        UserRecoveryBusiness.code({
+        Business.userRecovery.code({
             email: req.query.email,
             code: req.query.code,
         })

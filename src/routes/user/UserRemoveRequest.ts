@@ -1,6 +1,6 @@
 import { RequestHandler } from 'express-serve-static-core'
-import { UserBusiness } from '../../business/UserBusiness'
 import { DefaultRouterResolver } from '../DefaultRouterResolver'
+import { Business } from '../../business/Business'
 
 export const UserRemoveRequest: RequestHandler<
     string,
@@ -10,7 +10,7 @@ export const UserRemoveRequest: RequestHandler<
     }
 > = (req, res) => {
     DefaultRouterResolver(res, () => {
-        UserBusiness.remove({
+        Business.user.remove({
             currentUser: req.currentUser,
             password: req.body?.password,
         })
