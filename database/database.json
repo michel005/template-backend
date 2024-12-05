@@ -5,7 +5,7 @@
       "email": "mdgrigoli@hotmail.com.br",
       "birthday": "19/12/1991",
       "id": "926c062d-dc69-4e66-9d64-525b0d162f08",
-      "save_date": "2024-11-23T02:53:30.723Z",
+      "save_date": "05/12/2024 02:41:19",
       "person_type": "PF",
       "document_type": "CPF",
       "document_number": "232.132.131-23",
@@ -24,7 +24,7 @@
         "country": "Brasil"
       },
       "settings": {
-        "color_schema": "#6736b0"
+        "color_schema": "#3677b0"
       }
     }
   ],
@@ -392,6 +392,69 @@
       "token": "12fc6756-8b45-4298-a8f0-f25974852ee3",
       "id": "50d1b7f2-1782-4081-a7e0-b0a7363b222c",
       "save_date": "2024-11-21T02:27:32.811Z"
+    },
+    {
+      "user_id": "926c062d-dc69-4e66-9d64-525b0d162f08",
+      "expiration_date": "2024-11-25T03:17:13.715Z",
+      "token": "2145aad2-8d9f-4515-b39f-a61fb2cc9c87",
+      "id": "cf098cf1-6369-4d35-bb0c-fb334a166e76",
+      "save_date": "25/11/2024 00:17:13"
+    },
+    {
+      "user_id": "926c062d-dc69-4e66-9d64-525b0d162f08",
+      "expiration_date": "2024-11-25T03:34:13.241Z",
+      "token": "174e2927-d80f-4d42-b3af-0d9f45f337d7",
+      "id": "1ea184ec-425d-4866-8492-64a77dc108a3",
+      "save_date": "25/11/2024 00:34:13"
+    },
+    {
+      "user_id": "926c062d-dc69-4e66-9d64-525b0d162f08",
+      "expiration_date": "2024-11-25T04:08:43.702Z",
+      "token": "fd0ecaaf-0725-489f-ba59-46d4ed37460c",
+      "id": "96838d75-928b-4ec6-89c4-c3a566ffd9f2",
+      "save_date": "25/11/2024 01:08:43"
+    },
+    {
+      "user_id": "926c062d-dc69-4e66-9d64-525b0d162f08",
+      "expiration_date": "2024-11-25T04:11:21.136Z",
+      "token": "67ebab78-07b6-4aa7-afe1-775aa2bb7c83",
+      "id": "548748a2-c5c1-4330-a93c-95f12f342919",
+      "save_date": "25/11/2024 01:11:21"
+    },
+    {
+      "user_id": "926c062d-dc69-4e66-9d64-525b0d162f08",
+      "expiration_date": "2024-12-01T20:20:11.082Z",
+      "token": "9c56f84f-b102-4129-992c-9d80aae35a04",
+      "id": "592bdcd8-aa47-4511-ac01-3125916634dc",
+      "save_date": "01/12/2024 17:20:11"
+    },
+    {
+      "user_id": "926c062d-dc69-4e66-9d64-525b0d162f08",
+      "expiration_date": "2024-12-01T20:23:01.221Z",
+      "token": "0ddb78ba-3814-442a-9b85-8f6f02bcde54",
+      "id": "02c16e40-b626-47d5-b27e-d1625b1a3d69",
+      "save_date": "01/12/2024 17:23:01"
+    },
+    {
+      "user_id": "926c062d-dc69-4e66-9d64-525b0d162f08",
+      "expiration_date": "2024-12-01T20:24:00.999Z",
+      "token": "2c491987-3868-4784-9876-215c8486fa31",
+      "id": "dc6323c9-8849-4acc-b32c-35ddd7d898fb",
+      "save_date": "01/12/2024 17:24:00"
+    },
+    {
+      "user_id": "926c062d-dc69-4e66-9d64-525b0d162f08",
+      "expiration_date": "2024-12-01T20:25:49.856Z",
+      "token": "371c7a99-de74-4946-a3ff-5f0320c099bb",
+      "id": "56fc10a4-9f0d-4ee7-a756-281e335dfd92",
+      "save_date": "01/12/2024 17:25:49"
+    },
+    {
+      "user_id": "926c062d-dc69-4e66-9d64-525b0d162f08",
+      "expiration_date": "2024-12-01T20:53:42.979Z",
+      "token": "b4fa5f87-7e4c-445c-97ac-e451c338b630",
+      "id": "1b6081ee-47c3-4a0a-8d64-5d8e34e745f6",
+      "save_date": "01/12/2024 17:53:42"
     }
   ],
   "user_recovery": [],
@@ -399,27 +462,27 @@
     {
       "id": "926c062d-dc69-4e66-1234-525b0d162f08",
       "user_id": "926c062d-dc69-4e66-9d64-525b0d162f08",
-      "save_date": "2024-11-23T03:46:06.748Z",
-      "name": " Treino A",
+      "save_date": "02/12/2024 17:35:55",
+      "name": "Treino A",
       "expiration_date": "31/12/2024",
       "status": "OPEN",
-      "weekday": "2"
+      "weekday": "6"
     },
     {
       "user_id": "926c062d-dc69-4e66-9d64-525b0d162f08",
       "name": "Treino B",
       "expiration_date": "31/12/2024",
       "id": "f19f0af0-4dbb-4fdf-a6eb-720a02e1d868",
-      "save_date": "2024-11-23T02:40:10.231Z",
+      "save_date": "02/12/2024 23:43:22",
       "status": "OPEN",
       "weekday": "3"
     },
     {
       "name": "Treino C",
-      "expiration_date": "31/12/2024",
+      "expiration_date": "31/10/2025",
       "user_id": "926c062d-dc69-4e66-9d64-525b0d162f08",
       "id": "18ed749e-7385-4499-a226-c2a70c6cfda3",
-      "save_date": "2024-11-23T02:43:40.293Z",
+      "save_date": "02/12/2024 23:23:18",
       "status": "OPEN",
       "weekday": "4"
     },
@@ -428,34 +491,21 @@
       "expiration_date": "01/01/2025",
       "user_id": "926c062d-dc69-4e66-9d64-525b0d162f08",
       "id": "4b1c9894-5dd2-4de7-8b68-a233ddff8614",
-      "save_date": "2024-11-23T04:05:46.624Z",
+      "save_date": "02/12/2024 23:43:28",
       "status": "OPEN",
       "weekday": "5"
     },
     {
       "name": "Treino E",
       "expiration_date": "01/01/2025",
-      "weekday": "7",
+      "weekday": "2",
       "status": "OPEN",
       "user_id": "926c062d-dc69-4e66-9d64-525b0d162f08",
       "id": "2b3eab89-aa54-4d2d-999e-ac1d4e43b116",
-      "save_date": "2024-11-23T04:05:50.073Z"
+      "save_date": "02/12/2024 00:19:30"
     }
   ],
   "exercise": [
-    {
-      "user_id": "926c062d-dc69-4e66-9d64-525b0d162f08",
-      "id": "1",
-      "training_id": "4b1c9894-5dd2-4de7-8b68-a233ddff8614",
-      "order": 20,
-      "name": "Máximo de burpes",
-      "measure_type": "SERIES",
-      "execution_plan": {
-        "total_series": 5,
-        "resting_time": "00:00:15"
-      },
-      "save_date": "2024-11-23T02:49:16.603Z"
-    },
     {
       "user_id": "926c062d-dc69-4e66-9d64-525b0d162f08",
       "id": "2",
@@ -465,23 +515,11 @@
       "measure_type": "REPETITIONS",
       "execution_plan": {
         "total_series": 5,
-        "total_repetitions": 12
+        "total_repetitions": 12,
+        "resting_time": "00:00:45"
       },
       "drops": 3,
-      "save_date": "2024-11-23T02:49:16.602Z"
-    },
-    {
-      "user_id": "926c062d-dc69-4e66-9d64-525b0d162f08",
-      "training_id": "4b1c9894-5dd2-4de7-8b68-a233ddff8614",
-      "order": 30,
-      "name": "Esteira livre",
-      "measure_type": "TIME",
-      "execution_plan": {
-        "target_time": "00:45:00"
-      },
-      "id": "94ea5029-e637-4b2d-a92b-d5b037e6b28a",
-      "save_date": "2024-11-23T02:49:16.604Z",
-      "description": "Não fazer com pressa"
+      "save_date": "25/11/2024 00:19:11"
     },
     {
       "user_id": "926c062d-dc69-4e66-9d64-525b0d162f08",
@@ -495,21 +533,73 @@
         "total_repetitions": "15"
       },
       "id": "4b9928f1-66fe-4094-92c9-66583b0b23d7",
-      "save_date": "2024-11-22T01:53:26.388Z"
+      "save_date": "04/12/2024 23:09:08"
     },
     {
       "user_id": "926c062d-dc69-4e66-9d64-525b0d162f08",
-      "training_id": "4b1c9894-5dd2-4de7-8b68-a233ddff8614",
-      "order": 40,
-      "name": "Corrida livre",
-      "measure_type": "DISTANCE",
+      "training_id": "18ed749e-7385-4499-a226-c2a70c6cfda3",
+      "order": 10,
+      "name": "Cardio Livre",
+      "description": "Esteira, eliptico ou bicicléta",
+      "measure_type": "TIME",
       "execution_plan": {
-        "target_time": "00:45:00",
-        "distance": "10",
-        "distance_unit_measure": "km"
+        "target_time": "00:05:00"
       },
-      "id": "8ec30713-a3fd-4c45-8c47-19109f8cd8b6",
-      "save_date": "2024-11-23T02:49:16.604Z"
+      "id": "a2216715-d6a6-4589-972b-d294aa52edc0",
+      "save_date": "02/12/2024 23:24:17"
+    },
+    {
+      "user_id": "926c062d-dc69-4e66-9d64-525b0d162f08",
+      "training_id": "f19f0af0-4dbb-4fdf-a6eb-720a02e1d868",
+      "order": 10,
+      "name": "Suicídios",
+      "measure_type": "TIME",
+      "drops": "3",
+      "execution_plan": {
+        "target_time": "00:12:00"
+      },
+      "id": "3b1332f5-d8ac-4c44-9acb-390f99c728a1",
+      "save_date": "30/11/2024 01:07:11"
+    },
+    {
+      "user_id": "926c062d-dc69-4e66-9d64-525b0d162f08",
+      "training_id": "18ed749e-7385-4499-a226-c2a70c6cfda3",
+      "order": 30,
+      "name": "Esteira",
+      "measure_type": "TIME",
+      "execution_plan": {
+        "target_time": "00:45:00"
+      },
+      "id": "ae530b71-5941-4bef-b0de-5464cb60a04f",
+      "save_date": "02/12/2024 23:24:17"
+    },
+    {
+      "user_id": "926c062d-dc69-4e66-9d64-525b0d162f08",
+      "training_id": "18ed749e-7385-4499-a226-c2a70c6cfda3",
+      "order": 20,
+      "name": "Desenvolvimento Lateral",
+      "measure_type": "REPETITIONS",
+      "execution_plan": {
+        "total_series": "4",
+        "total_repetitions": "15",
+        "resting_time": "00:00:45"
+      },
+      "id": "add1e5ca-7291-4f39-91de-ff75bcc3f61e",
+      "save_date": "02/12/2024 23:24:17"
+    },
+    {
+      "user_id": "926c062d-dc69-4e66-9d64-525b0d162f08",
+      "training_id": "2b3eab89-aa54-4d2d-999e-ac1d4e43b116",
+      "order": 10,
+      "name": "Abdominal em V",
+      "measure_type": "SERIES",
+      "execution_plan": {
+        "total_series": "4",
+        "resting_time": "00:00:45"
+      },
+      "id": "6d1d9a64-2218-4047-8917-352b83f5435a",
+      "save_date": "05/12/2024 02:45:48",
+      "description": "Máximo de repetições possíveis"
     }
   ]
 }

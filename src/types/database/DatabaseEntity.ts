@@ -1,4 +1,4 @@
 export type DatabaseEntity<T = any> = {
     id?: string
-    save_date?: Date
+    save_date?: string
 } & T

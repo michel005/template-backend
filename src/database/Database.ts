@@ -4,6 +4,7 @@ import fileStream from 'fs'
 import path from 'path'
 import { DatabaseEntity } from '../types/database/DatabaseEntity'
 import { ErrorCollection } from '../types/ErrorCollection'
+import { DateUtils } from '../utils/DateUtils'
 
 export class Database<T> {
     private readonly _table: string
@@ -60,14 +61,14 @@ export class Database<T> {
                 content[this._table][foundedIndex] = {
                     ...entity,
                     id: entity.id,
-                    save_date: new Date(),
+                    save_date: DateUtils.dateTimeToString(new Date()),
                 }
             } else {
                 ErrorCollection.simple('error', 'VALIDATION-002')
             }
         } else {
             entity.id = randomUUID()
-            entity.save_date = new Date()
+            entity.save_date = DateUtils.dateTimeToString(new Date())
 
             if (!content[this._table]) {
                 content[this._table] = []

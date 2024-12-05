@@ -4,6 +4,7 @@ import { TrainingType } from '../types/TrainingType'
 import { AbstractUserBusiness } from './AbstractUserBusiness'
 import { Business } from './Business'
 import { SortUtils } from '../utils/SortUtils'
+import { DateUtils } from '../utils/DateUtils'
 
 export class TrainingBusiness extends AbstractUserBusiness<TrainingType> {
     constructor() {
@@ -45,7 +46,12 @@ export class TrainingBusiness extends AbstractUserBusiness<TrainingType> {
             name: entity.name,
             expiration_date: entity.expiration_date,
             weekday: entity.weekday,
-            status: entity.status,
+            status:
+                entity.status === 'EXPIRED' &&
+                DateUtils.stringToDate(entity.expiration_date).getTime() >=
+                    new Date().getTime()
+                    ? 'OPEN'
+                    : entity.status,
         }
     }
 
@@ -64,6 +70,11 @@ export class TrainingBusiness extends AbstractUserBusiness<TrainingType> {
                     currentUser,
                 })
                 .sort((x: any, y: any) => SortUtils.sort(x, y, 'order')),
+            status:
+                DateUtils.stringToDate(entity.expiration_date).getTime() <
+                new Date().getTime()
+                    ? 'EXPIRED'
+                    : entity.status,
             user_id: undefined,
         }
     }
@@ -98,5 +109,6 @@ export class TrainingBusiness extends AbstractUserBusiness<TrainingType> {
                     currentUser,
                 })
             })
+            .sort((x, y) => SortUtils.sort(x, y, 'weekday', 'ASC'))
     }
 }

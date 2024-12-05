@@ -40,6 +40,6 @@ export type TrainingType = DatabaseEntity<{
     user_id?: string
     name?: string
     expiration_date?: string
-    status?: 'OPEN' | 'ARCHIVED' | 'CLOSED'
+    status?: 'OPEN' | 'ARCHIVED' | 'CLOSED' | 'EXPIRED'
     weekday?: number
 }>
